@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<WTTConfig>
+	<GlobalConfiguration>
+		<JobTimeout Value="14400" />
+		<DataStore Value="CorePlaceHolder" />
+		<SourceDataStore Value="1Windows" />
+		<DestinationDataStore Value="CorePlaceHolder" />
+	</GlobalConfiguration>
+	<ScenarioTest Id="11" Name="RS2ServicingRuns"  Description="RS2 Servicing Runs">
+		<MachineDetails>
+			<Machine Name="27-3289D0402" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\Host" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+				<Parameters>
+					<Parameter Name="OsaLab" Value="RS_ONECORE_CONTAINER"/>
+				<Parameter Name="OsaEdition" Value="ServerDatacenter"/>
+				</Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="338687">
+				<Parameters>
+					<Parameter Name="NetUserPassword" Value="n0bleGasExchange-"/>
+					<Parameter Name="ContainerHostEdition" Value="Enterprise"/>
+					<Parameter Name="BranchName" Value="RS2_RELEASE"/>
+					<Parameter Name="BuildNumber" Value="15063.0.170317-1834"/>
+					<Parameter Name="VMName" Value="test1"/>
+					<Parameter Name="VHDName" Value="test1"/>
+					<Parameter Name="InstallUpdate" Value="true"/>
+					<Parameter Name="IsNestedSupported" Value="true"/>
+					<Parameter Name="TagListCount" Value="1"/>
+					<Parameter Name="DockerBinaryPath" Value="https://dockermsft.blob.core.windows.net/dockercontainer/docker-1-13-1.zip"/>
+					<Parameter Name="InstallPublishedImages" Value="true"/>
+					<Parameter Name="InstallCustomUpdate" Value="true"/>
+					<Parameter Name="InstallPrivateImages" Value="false"/>
+					<Parameter Name="ValidateWindowsContainer" Value="false"/>
+					<Parameter Name="ValidateHyperVContainer" Value="true"/>
+					<Parameter Name="UpdatePackageSharePath" Value="\\winsehotfix\hotfixes\Windows10\RS2\RTM\KB4022716\V1.004\free\NEU\x64\EXPANDED_PACKAGE"/>
+					<Parameter Name="PackageName" Value="Windows10.0-KB4022716-x64.cab"/>
+				</Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+</WTTConfig>

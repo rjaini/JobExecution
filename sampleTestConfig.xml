@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<WTTConfig>
+	<GlobalConfiguration>
+		<JobTimeout Value="7200" />
+		<DataStore Value="CorePlaceHolder" />
+		<SourceDataStore Value="1Windows" />
+		<DestinationDataStore Value="CorePlaceHolder" />
+	</GlobalConfiguration>
+	<ScenarioTest Id="1" Name="AppCompact" Description="AppCompact Runs">
+		<MachineDetails>
+			<Machine Name="rjaini-hyp-03" MachinePool="$\Teams\HYPV-Hyper-V\rickb\vinodk\rjaini\Office" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="326028" Wait="true" Reset="true" />
+		</JobDetails>
+	</ScenarioTest>
+</WTTConfig>

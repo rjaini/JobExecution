@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<WTTConfig>
+	<GlobalConfiguration>
+		<JobTimeout Value="14400" />
+		<DataStore Value="CorePlaceHolder" />
+		<SourceDataStore Value="1Windows" />
+		<DestinationDataStore Value="CorePlaceHolder" />
+	</GlobalConfiguration>
+	<ScenarioTest Id="1" Name="AppCompact Runs"  Description="RS_ONECORE_CONTAINER branch app-compact Runs">
+		<MachineDetails>
+			<Machine Name="rjaini-hyp-03" MachinePool="$\Teams\HYPV-Hyper-V\rickb\vinodk\rjaini\Office" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+			  <Parameters>
+				<Parameter Name="OsaLab" Value="rs_onecore_container"/>
+				<Parameter Name="OsaEdition" Value="ServerDatacenterCore"/>
+			  </Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="326027" />
+			<Job Id="331904" />
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="2" Name="KernelMemoryLeakRuns"  Description="RS_ONECORE_CONTAINER branch Kernel Memory Leak Runs">
+		<MachineDetails>
+			<Machine Name="rjaini-hyp-02" MachinePool="$\Teams\HYPV-Hyper-V\rickb\vinodk\rjaini\Office" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+			  <Parameters>
+				<Parameter Name="OsaLab" Value="RS2_RELEASE_SVC"/>
+				<Parameter Name="OsaEdition" Value="Enterprise"/>
+			  </Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="344092">
+			<Parameters>
+				<Parameter Name="NetUserPassword" Value="n0bleGasExchange-"/>
+				<Parameter Name="BuildNumber" Value="16229.1000.170620-1600"/>
+				<Parameter Name="ContainerHostEdition" Value="ServerDataCentercore"/>
+				<Parameter Name="DockerBinaryPath" Value="https://master.dockerproject.org/windows/x86_64/docker-17.06.0-dev.zip"/>
+				<Parameter Name="IterationCount" Value="10000"/>
+				<Parameter Name="CoolTimeInMinutes" Value="240"/>
+			  </Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="3" Name="ClientPCSRuns"  Description="RS_ONECORE_CONTAINER branch Client Runs">
+		<MachineDetails>
+			<Machine Name="27-3289D0402" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\Host" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+			  <Parameters>
+				<Parameter Name="OsaLab" Value="rs_onecore_container"/>
+				<Parameter Name="OsaEdition" Value="Enterprise"/>
+			  </Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="326254">
+			<Parameters>
+				<Parameter Name="DockerSourcePath" Value="https://master.dockerproject.org/windows/x86_64/docker-17.06.0-dev.zip"/>
+				<Parameter Name="MultiVersionImageSetup" Value="true"/>
+				<Parameter Name="EnableDriverVerifier" Value="true"/>
+				<Parameter Name="EnableApplicationVerifier" Value="true"/>
+				<Parameter Name="ArgonProbability" Value="0"/>
+				<Parameter Name="DurationInHours" Value="12"/>
+				<Parameter Name="ConfigFile" Value="PrivateCloudSimulator_Container.Xml"/>
+				<Parameter Name="DockerRuntime" Value="Service"/>
+			  </Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="4" Name="ServerArgonPCSRuns"  Description="RS_ONECORE_CONTAINER branch Argon Server Runs">
+		<MachineDetails>
+			<Machine Name="27-3289D0406" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\Host" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+			  <Parameters>
+				<Parameter Name="OsaLab" Value="rs_onecore_container"/>
+				<Parameter Name="OsaEdition" Value="ServerDatacenterCore"/>
+			  </Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="326149">
+			<Parameters>
+				<Parameter Name="DockerSourcePath" Value="https://master.dockerproject.org/windows/x86_64/docker-17.06.0-dev.zip"/>
+				<Parameter Name="EnableDriverVerifier" Value="false"/>
+				<Parameter Name="EnableApplicationVerifier" Value="false"/>
+				<Parameter Name="ArgonProbability" Value="100"/>
+				<Parameter Name="DurationInHours" Value="12"/>
+				<Parameter Name="ConfigFile" Value="PrivateCloudSimulator_Container_Scale.xml"/>
+				<Parameter Name="MaxRunningContainerCount" Value="500"/>
+				<Parameter Name="MaxContainerCount" Value="500"/>
+			  </Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="6" Name="ServerXenonPCSRuns"  Description="RS_ONECORE_CONTAINER branch Xenon Server Runs">
+		<MachineDetails>
+			<Machine Name="27-3289D0401" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\Host" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+				<Parameters>
+					<Parameter Name="OsaLab" Value="rs_onecore_container"/>
+					<Parameter Name="OsaEdition" Value="ServerDatacenterCore"/>
+				</Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="326149">
+				<Parameters>
+					<Parameter Name="DockerSourcePath" Value="https://master.dockerproject.org/windows/x86_64/docker-17.06.0-dev.zip"/>
+					<Parameter Name="EnableDriverVerifier" Value="false"/>
+					<Parameter Name="EnableApplicationVerifier" Value="false"/>
+					<Parameter Name="ArgonProbability" Value="0"/>
+					<Parameter Name="DurationInHours" Value="12"/>
+					<Parameter Name="ConfigFile" Value="PrivateCloudSimulator_Container_Scale.xml"/>
+					<Parameter Name="MaxRunningContainerCount" Value="100"/>
+					<Parameter Name="MaxContainerCount" Value="100"/>
+				</Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="7" Name="ServerLinuxXenonPCSRuns"  Description="RS_ONECORE_CONTAINER branch Linux Xenon Server Runs">
+		<MachineDetails>
+			<Machine Name="37-4611C2521" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\Host" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+				<Parameters>
+					<Parameter Name="OsaLab" Value="rs_onecore_container"/>
+					<Parameter Name="OsaEdition" Value="ServerDatacenterCore"/>
+				</Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="344171">
+				<Parameters>
+					<Parameter Name="DockerRuntime" Value="Service"/>
+				</Parameters>
+			</Job>
+			<Job Id="282941">
+				<Parameters>
+					<Parameter Name="DefaultCommand" Value="tail -f /dev/null"/>
+					<Parameter Name="WorkloadArguments" Value="echo test ">" %GUID%.txt"/>
+					<Parameter Name="HyperVContainerImageName" Value="busybox"/>
+					<Parameter Name="ArgonProbability" Value="0"/>
+					<Parameter Name="UsePcsWorkLoad" Value="false"/>
+				</Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="8" Name="ServerArgonParallelRuns"  Description="RS_ONECORE_CONTAINER branch Argon Server Parallel Runs">
+		<MachineDetails>
+			<Machine Name="37-4611D29135" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\VirtualMachines" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+				<Parameters>
+					<Parameter Name="OsaLab" Value="rs_onecore_container"/>
+					<Parameter Name="OsaEdition" Value="ServerDatacenterCore"/>
+				</Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="344116">
+				<Parameters>
+					<Parameter Name="ContainerType" Value="process"/>
+					<Parameter Name="ParallelStartCount" Value="20"/>
+					<Parameter Name="MaxRunningCount" Value="200"/>
+					<Parameter Name="ExecutionTimeinMinutes" Value="720"/>
+					<Parameter Name="TestType" Value="ParallelStartTest"/>
+				</Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="9" Name="ServerArgonParallelRuns"  Description="RS_ONECORE_CONTAINER branch Argon Server Parallel Runs">
+		<MachineDetails>
+			<Machine Name="27-3289D04031" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\VirtualMachines" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+				<Parameters>
+					<Parameter Name="OsaLab" Value="rs_onecore_container"/>
+					<Parameter Name="OsaEdition" Value="ServerDatacenterCore"/>
+				</Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="344116">
+				<Parameters>
+					<Parameter Name="ContainerType" Value="hyperv"/>
+					<Parameter Name="ParallelStartCount" Value="10"/>
+					<Parameter Name="MaxRunningCount" Value="50"/>
+					<Parameter Name="ExecutionTimeinMinutes" Value="720"/>
+					<Parameter Name="TestType" Value="ParallelStartTest"/>
+				</Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="10" Name="RS1ServicingRuns"  Description="RS1 Servicing Runs">
+		<MachineDetails>
+			<Machine Name="27-3289D0402" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\Host" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+				<Parameters>
+					<Parameter Name="OsaLab" Value="RS1_RELEASE"/>
+					<Parameter Name="OsaEdition" Value="ServerDatacenter"/>
+				</Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="338687">
+				<Parameters>
+					<Parameter Name="NetUserPassword" Value="n0bleGasExchange-"/>
+					<Parameter Name="ContainerHostEdition" Value="ServerDatacenter"/>
+					<Parameter Name="BranchName" Value="RS1_REFRESH"/>
+					<Parameter Name="BuildNumber" Value="14393.0.160911-2111"/>
+					<Parameter Name="VMName" Value="test1"/>
+					<Parameter Name="VHDName" Value="test1"/>
+					<Parameter Name="InstallUpdate" Value="true"/>
+					<Parameter Name="IsNestedSupported" Value="true"/>
+					<Parameter Name="TagListCount" Value="-1"/>
+					<Parameter Name="DockerBinaryPath" Value="https://dockermsft.blob.core.windows.net/dockercontainer/docker-1-13-1.zip"/>
+					<Parameter Name="InstallPublishedImages" Value="true"/>
+					<Parameter Name="InstallCustomUpdate" Value="true"/>
+					<Parameter Name="InstallPrivateImages" Value="true"/>
+					<Parameter Name="ValidateWindowsContainer" Value="true"/>
+					<Parameter Name="ValidateHyperVContainer" Value="true"/>
+					
+					
+					<Parameter Name="UpdatePackageSharePath" Value="\\winsehotfix\hotfixes\Windows10\RS2\RTM\KB4016871\V1.005\free\NEU\x64\EXPANDED_PACKAGE"/>
+					<Parameter Name="PackageName" Value="Windows10.0-KB4016871-x64.cab"/>
+					<Parameter Name="DeltaImageSharePath" Value="\\sesdfs\1Windows\TestContent\CORE\Base\HYP\HAT\images\2017_2B"/>
+				</Parameters>
+			</Job>
+			<Job Id="338687">
+				<Parameters>
+					<Parameter Name="NetUserPassword" Value="n0bleGasExchange-"/>
+					<Parameter Name="ContainerHostEdition" Value="ServerDatacenterNano"/>
+					<Parameter Name="BranchName" Value="RS1_REFRESH"/>
+					<Parameter Name="BuildNumber" Value="14393.0.160911-2111"/>
+					<Parameter Name="VMName" Value="test1"/>
+					<Parameter Name="VHDName" Value="test1"/>
+					<Parameter Name="InstallUpdate" Value="true"/>
+					<Parameter Name="IsNestedSupported" Value="true"/>
+					<Parameter Name="TagListCount" Value="-1"/>
+					<Parameter Name="DockerBinaryPath" Value="https://dockermsft.blob.core.windows.net/dockercontainer/docker-1-13-1.zip"/>
+					<Parameter Name="InstallPublishedImages" Value="true"/>
+					<Parameter Name="InstallCustomUpdate" Value="true"/>
+					<Parameter Name="InstallPrivateImages" Value="true"/>
+					<Parameter Name="ValidateWindowsContainer" Value="true"/>
+					<Parameter Name="ValidateHyperVContainer" Value="true"/>
+					
+					
+					<Parameter Name="UpdatePackageSharePath" Value="\\winsehotfix\hotfixes\Windows10\RS2\RTM\KB4016871\V1.005\free\NEU\x64\EXPANDED_PACKAGE"/>
+					<Parameter Name="PackageName" Value="Windows10.0-KB4016871-x64.cab"/>
+					<Parameter Name="DeltaImageSharePath" Value="\\sesdfs\1Windows\TestContent\CORE\Base\HYP\HAT\images\2017_2B"/>
+				</Parameters>
+			</Job>
+			
+			<Job Id="338687">
+				<Parameters>
+					<Parameter Name="NetUserPassword" Value="n0bleGasExchange-"/>
+					<Parameter Name="ContainerHostEdition" Value="Enterprise"/>
+					<Parameter Name="BranchName" Value="RS1_RELEASE"/>
+					<Parameter Name="BuildNumber" Value="14393.0.160715-1616"/>
+					<Parameter Name="VMName" Value="test1"/>
+					<Parameter Name="VHDName" Value="test1"/>
+					<Parameter Name="InstallUpdate" Value="true"/>
+					<Parameter Name="IsNestedSupported" Value="true"/>
+					<Parameter Name="TagListCount" Value="-1"/>
+					<Parameter Name="DockerBinaryPath" Value="https://dockermsft.blob.core.windows.net/dockercontainer/docker-1-13-1.zip"/>
+					<Parameter Name="InstallPublishedImages" Value="true"/>
+					<Parameter Name="InstallCustomUpdate" Value="true"/>
+					<Parameter Name="InstallPrivateImages" Value="true"/>
+					<Parameter Name="ValidateWindowsContainer" Value="false"/>
+					<Parameter Name="ValidateHyperVContainer" Value="true"/>
+					
+					
+					<Parameter Name="UpdatePackageSharePath" Value="\\winsehotfix\hotfixes\Windows10\RS2\RTM\KB4016871\V1.005\free\NEU\x64\EXPANDED_PACKAGE"/>
+					<Parameter Name="PackageName" Value="Windows10.0-KB4016871-x64.cab"/>
+					<Parameter Name="DeltaImageSharePath" Value="\\sesdfs\1Windows\TestContent\CORE\Base\HYP\HAT\images\2017_2B"/>
+				</Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="11" Name="RS2ServicingRuns"  Description="RS2 Servicing Runs">
+		<MachineDetails>
+			<Machine Name="27-3289D0402" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\Host" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+				<Parameters>
+					<Parameter Name="OsaLab" Value="RS2_RELEASE_SVC"/>
+				<Parameter Name="OsaEdition" Value="Enterprise"/>
+				</Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="338687">
+				<Parameters>
+					<Parameter Name="NetUserPassword" Value="n0bleGasExchange-"/>
+					<Parameter Name="ContainerHostEdition" Value="Enterprise"/>
+					<Parameter Name="BranchName" Value="RS2_RELEASE"/>
+					<Parameter Name="BuildNumber" Value="15063.0.170317-1834"/>
+					<Parameter Name="VMName" Value="test1"/>
+					<Parameter Name="VHDName" Value="test1"/>
+					<Parameter Name="InstallUpdate" Value="true"/>
+					<Parameter Name="IsNestedSupported" Value="true"/>
+					<Parameter Name="TagListCount" Value="1"/>
+					<Parameter Name="DockerBinaryPath" Value="https://dockermsft.blob.core.windows.net/dockercontainer/docker-1-13-1.zip"/>
+					<Parameter Name="InstallPublishedImages" Value="true"/>
+					<Parameter Name="InstallCustomUpdate" Value="true"/>
+					<Parameter Name="InstallPrivateImages" Value="false"/>
+					<Parameter Name="ValidateWindowsContainer" Value="false"/>
+					<Parameter Name="ValidateHyperVContainer" Value="true"/>
+					
+					
+					<Parameter Name="UpdatePackageSharePath" Value="\\winsehotfix\hotfixes\Windows10\RS2\RTM\KB4016871\V1.005\free\NEU\x64\EXPANDED_PACKAGE"/>
+					<Parameter Name="PackageName" Value="Windows10.0-KB4016871-x64.cab"/>
+					<Parameter Name="DeltaImageSharePath" Value="\\sesdfs\1Windows\TestContent\CORE\Base\HYP\HAT\images\2017_2B"/>
+				</Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+	<ScenarioTest Id="12" Name="RS1AzureRuns"  Description="RS1 Azure Runs">
+		<MachineDetails>
+			<Machine Name="27-3289D0402" MachinePool="$\TEX\HYPV\Unmanaged\Development\Xenon\DailyRuns\Host" />
+		</MachineDetails>
+		<JobDetails>
+			<Job Id="9" Wait="true" Reset="true">
+				<Parameters>
+					<Parameter Name="OsaLab" Value="RS2_RELEASE_SVC"/>
+				<Parameter Name="OsaEdition" Value="Enterprise"/>
+				</Parameters>
+			</Job>
+			<Job Id="14" Wait="true" Reset="true" />
+			<Job Id="338677">
+				<Parameters>
+					<Parameter Name="AzureVHDPath" Value="\\istvac_z400\public\Jan2017_WS2016_CONT\Windows-Server-2016-with-Containers-20170110-en.us-127GB.vhd"/>
+					<Parameter Name="ValidateWindowsContainer" Value="true"/>
+				</Parameters>
+			</Job>
+		</JobDetails>
+	</ScenarioTest>
+</WTTConfig>
