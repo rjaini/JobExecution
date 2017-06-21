@@ -20,7 +20,7 @@
 			<Job Id="14" Wait="true" Reset="true" />
 			<Job Id="338687">
 				<Parameters>
-					<Parameter Name="NetUserPassword" Value="n0bleGasExchange-"/>
+					<Parameter Name="NetUserPassword" Value=""/>
 					<Parameter Name="ContainerHostEdition" Value="Enterprise"/>
 					<Parameter Name="BranchName" Value="RS2_RELEASE"/>
 					<Parameter Name="BuildNumber" Value="15063.0.170317-1834"/>
@@ -35,8 +35,8 @@
 					<Parameter Name="InstallPrivateImages" Value="false"/>
 					<Parameter Name="ValidateWindowsContainer" Value="false"/>
 					<Parameter Name="ValidateHyperVContainer" Value="true"/>
-					<Parameter Name="UpdatePackageSharePath" Value="\\winsehotfix\hotfixes\Windows10\RS2\RTM\KB4022716\V1.004\free\NEU\x64\EXPANDED_PACKAGE"/>
-					<Parameter Name="PackageName" Value="Windows10.0-KB4022716-x64.cab"/>
+					<Parameter Name="UpdatePackageSharePath" Value=""/>
+					<Parameter Name="PackageName" Value=""/>
 				</Parameters>
 			</Job>
 		</JobDetails>
